@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+      <link rel="icon" type="image/x-icon" href="/static/noobcash_logo.svg">
+
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<style>
+
+body {
+      background-image: url("https://d11wkw82a69pyn.cloudfront.net/siteassets/images/blockchain_school_canvas_low.jpg");
+       background-size:   cover;
+    background-repeat: no-repeat;
+
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+h1 {text-align: center; color: aliceblue; font-size: 45px;}
+h2 {color: aliceblue;}
+
+ul {
+    position: center;
+  list-style-type: none;
+  margin: 0;
+  overflow: hidden;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 26px;
+  text-decoration: none;
+    font-size: 20px;
+}
+
+li a:hover {
+  background-color: #111;
+}
+
+input[type=text], select {
+  width: 20%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+.button {
+  background-color: #4CAF50; /* Green */
+  color: white;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 12px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  margin-left: 250px;
+    margin-top: 20px;
+}
+.button4 {
+  background-color: white;
+  color: black;
+  border: 5px solid #e7e7e7;
+}
+.button3{
+    width: 150px;
+    height: 50px;
+  background-color: white;
+  color: black;
+  border: 5px solid #e7e7e7;
+    margin-left: 250px;
+    margin-top: 20px;
+      cursor: pointer;
+
+}
+.button4:hover {background-color: #e7e7e7;}
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+
+</style>
+</head>
+<body>
+
+    <h1>Welcome to Noobchain Node {{ data['ID'] }}!</h1>
+        <img src="/static/noobcash_logo.svg" alt="Jane" style="width:15%;  display: block;
+  margin-left: auto;
+  margin-right: auto; ">
+
+    <ul>
+      <li><a class="active" href="">Home</a></li>
+      <li><a href="view">View</a></li>
+        <li><a href="balance">Balance</a></li>
+      <li><a href="about">About</a></li>
+        <li><a href="help">Help</a></li>
+    </ul>
+
+    <p  style="margin-top: 50px; margin-left: 30px; color: white; font-size: large">Number of connected Nodes: {{ data['NO_OF_NODES'] }}</p>
+    <p  style="margin-top: 50px; margin-left: 30px; color: white; font-size: large">IP: {{ data['ADDRESS'] }}</p>
+    <p  style="margin-top: 50px; margin-left: 30px; color: white; font-size: large">Your Public Key: {{ data['SENDER'] }}</p>
+    <div class="w3-container">
+  <button onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-black">CLick to See All Public Keys</button>
+
+  <div id="id01" class="w3-modal" style="word-wrap: break-word;">
+    <div class="w3-modal-content">
+      <div class="w3-container">
+        <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+         <p  style="margin-top: 50px; margin-left: 30px;">All Public Keys: {{ data['OTHERSK'] }} </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+      <div id="id02" class="w3-modal" style="word-wrap: break-word;">
+    <div class="w3-modal-content">
+      <div class="w3-container">
+        <span onclick="document.getElementById('id02').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+         <h2 style="color: black"> Transaction Was Completed Successfully!</h2>
+      </div>
+    </div>
+  </div>
+
+          <div id="id03" class="w3-modal" style="word-wrap: break-word;">
+    <div class="w3-modal-content">
+      <div class="w3-container">
+        <span onclick="document.getElementById('id03').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+         <h2 style="color: black"> You can not send money to yourself!</h2>
+      </div>
+    </div>
+  </div>
+    <div id="id04" class="w3-modal" style="word-wrap: break-word;">
+    <div class="w3-modal-content">
+      <div class="w3-container">
+        <span onclick="document.getElementById('id04').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+         <h2 style="color: black"> Please provide a number for the coins field!</h2>
+      </div>
+    </div>
+  </div>
+    <div id="id05" class="w3-modal" style="word-wrap: break-word;">
+    <div class="w3-modal-content">
+      <div class="w3-container">
+        <span onclick="document.getElementById('id05').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+         <h2 style="color: black"> This is not your ID. Try again!</h2>
+      </div>
+    </div>
+  </div>
+   <div id="id06" class="w3-modal" style="word-wrap: break-word;">
+    <div class="w3-modal-content">
+      <div class="w3-container">
+        <span onclick="document.getElementById('id06').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+         <h2 style="color: black"> The receiver ID in not valid!</h2>
+      </div>
+    </div>
+  </div>
+
+       <div id="id07" class="w3-modal" style="word-wrap: break-word;">
+    <div class="w3-modal-content">
+      <div class="w3-container">
+        <span onclick="document.getElementById('id07').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+         <h2 style="color: black"> Your balance is not enought! Try to send less coins.</h2>
+      </div>
+    </div>
+  </div>
+
+</div>
+{#     <h2 style="margin-top: 50px; margin-left: 30px; font-size: 27px">Get ID from Public Key:</h2>#}
+{#         <form style="margin-left: 30px" id="transaction_form">#}
+{#        <div style="margin-top: 20px">#}
+{#            <label for="fname" style="font-size: 22px"><b>Insert Public Key </b></label>#}
+{#            <input style="margin-left: 40px"  type="text" id="key" name="key" placeholder="Public Key">#}
+{#        </div>#}
+{#      </form>#}
+{#    <button id="searchid" class= "button3">Search ID</button>#}
+{#     <p>style="margin-top: 50px; margin-left: 30px; font-size: 27px"> ID: {{ data['KEY_ID'] }} </p>#}
+
+
+    <h2 style="margin-top: 50px; margin-left: 30px; font-size: 27px">Create a Transaction:</h2>
+
+      <form style="margin-left: 30px" id="transaction_form">
+        <div style="margin-top: 20px">
+            <label for="fname" style="font-size: 22px"><b>Sender ID </b></label>
+            <input style="margin-left: 40px"  type="text" id="sender" name="sender" placeholder="ex. 1">
+        </div>
+
+        <div style="margin-top: 20px">
+           <label for="fname" style="font-size: 22px"><b>Receiver ID </b></label>
+            <input style="margin-left: 25px" type="text" id="receiver" name="receiver" placeholder="ex. 2">
+        </div>
+
+        <div style="margin-top: 20px">
+            <label for="fname" style="font-size: 22px"><b>NBC </b></label>
+            <input style="margin-left: 90px" type="text" id="amount" name="amount" placeholder="ex. 42">
+        </div>
+            <button id="create_transaction" class="button button4">Send</button>
+      </form>
+
+    </div>
+
+
+
+
+</body>
+
+    <script>
+        $("#create_transaction").click(function (e) {
+            e.preventDefault();
+             s = document.getElementById("sender").value
+            r =  document.getElementById("receiver").value
+            c = document.getElementById("amount").value
+            console.log({{ data['bal'] }})
+            // checks
+            if(r > {{ data['NO_OF_NODES'] }}){
+                console.log("Invalid receiver ID")
+                document.getElementById('id06').style.display='block'
+                return
+            }
+            if (parseInt(s)!== parseInt({{ data['ID'] }})){
+                    console.log(typeof s, typeof parseInt({{ data['ID'] }}))
+                document.getElementById('id05').style.display='block'
+                return
+            }
+            if (s===r){
+                console.log("NOOOO ")
+                document.getElementById('id03').style.display='block'
+                return
+            }
+            if(isNaN(c)){
+                console.log("NOOOO ")
+                document.getElementById('id04').style.display='block'
+                return
+            }
+            if(c > {{ data['bal'] }}){
+                console.log("NOOOO ")
+                document.getElementById('id07').style.display='block'
+                return
+            }
+
+            data = {'sender': s, 'receiver': r, 'amount': c}
+            console.log(data)
+            console.log('{{ data['ADDRESS']}}')
+            fetch('{{ data['ADDRESS'] }}' + "/create_transaction_webapp",{
+                method: "POST",
+                headers: {'Content-type': 'application/json', 'Accept': 'text/plain'},
+                body: JSON.stringify(data)
+            }, { mode: 'no-cors'})
+                .then(function (response) {
+                document.getElementById('id02').style.display='block'
+                    return response
+                })
+                .then(function (data) {
+                    console.log(data)
+                })
+        });
+
+        {#   $("#searchid").click(function (e) {#}
+        {#    e.preventDefault();#}
+        {#     key = document.getElementById("key").value#}
+        {##}
+        {#    //data = $('#transaction_form').serialize()#}
+        {#    data = {'key': key}#}
+        {#    console.log(data)#}
+        {#    fetch('{{ data['ADDRESS'] }}' + "/search_by_key", {#}
+        {#        method: "POST",#}
+        {#        headers: {'Content-type': 'application/json', 'Accept': 'text/plain'},#}
+        {#        body: JSON.stringify(data)#}
+        {#    })#}
+        {#        .then(function (response) {#}
+        {#            $('#myModal').modal('toggle')#}
+        {##}
+        {#            return response#}
+        {#        })#}
+        {#        .then(function (data) {#}
+        {#            console.log(data)#}
+        {#        })#}
+        {#});#}
+
+
+    </script>
+
+</html>
+

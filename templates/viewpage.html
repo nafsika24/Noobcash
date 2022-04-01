@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+          <link rel="icon" type="image/x-icon" href="/static/noobcash_logo.svg">
+
+<style>
+body {
+  background-image: url("https://d11wkw82a69pyn.cloudfront.net/siteassets/images/blockchain_school_canvas_low.jpg");
+       background-size:   cover;
+            background-repeat: no-repeat;
+}
+h1 {text-align: center; color: aliceblue; font-size: 45px;}
+.div1 {
+        margin-top: 20px;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      background-color: #e6eeff;
+      border-radius: 20px;
+      padding: 5px;
+      width: 20%;
+      text-align: center;
+        word-wrap: break-word;
+
+}
+
+.div2 {
+    margin-top: 20px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #e6eeff;
+    border-radius: 20px;
+    padding: 5px;
+    width: 40%;
+    text-align: center;
+    word-wrap: break-word;
+}
+ul {
+    position: center;
+  list-style-type: none;
+  margin: 0;
+  overflow: hidden;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 26px;
+  text-decoration: none;
+    font-size: 20px;
+}
+
+li a:hover {
+  background-color: #111;
+}
+
+
+
+</style>
+</head>
+<body>
+    <h1>Details about the Transactions of the latest Block in the Blockchain!</h1>
+        <ul>
+      <li><a class="active" href="/">Home</a></li>
+      <li><a href="view">View</a></li>
+        <li><a href="balance">Balance</a></li>
+      <li><a href="about">About</a></li>
+        <li><a href="help">Help</a></li>
+    </ul>
+
+
+    <div class = "div2">
+         <p>  Coins:
+        {{ data}}</p>
+    </div>
+{#    <div class = "div1">#}
+{#         <p>  Transaction ID:#}
+{#        {{ data['trans_id'] }}</p>#}
+{#    </div>#}
+{#    <div class = "div1">#}
+{#         <p>  Inputs:#}
+{#        {{ data['inputs'] }}</p>#}
+{#    </div>#}
+{#    <div class = "div1">#}
+{#         <p>  Outputs:#}
+{#        {{ data['outputs'] }}</p>#}
+{#    </div>#}
+{#    <div class = "div1">#}
+{#         <p>  Sender ID:#}
+{#        {{ data['sender'] }}</p>#}
+{#    </div>#}
+{##}
+{#    <div class = "div2">#}
+{#         <p>  Receiver:#}
+{#        {{ data['receiver'] }}</p>#}
+{#    </div>#}
+
+
+</body>
+
+
+
+</html>
+
