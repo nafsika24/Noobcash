@@ -42,8 +42,9 @@ If you want to run the tests inside the folders 5nodes and 10nodes replace app.p
 
 ## Collaborators
 
-![DImitrios Dimos](https://github.com/d-dimos)
-![Nikolaos Christopoulos](https://github.com/christopni)
+[DImitrios Dimos](https://github.com/d-dimos)
+
+[Nikolaos Christopoulos](https://github.com/christopni)
 
 
 
