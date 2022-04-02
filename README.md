@@ -2,4 +2,8 @@
 ## Abou the Project
 Simple Blockchain System for NTUA ECE Course Distributed Systems
 
-![alt text](https://github.com/nafsika24/Noobcash/blob/main/screenshots/noobcash_logo.png | width=90)
+<p align="center">
+  <img src= "https://github.com/nafsika24/Noobcash/blob/main/screenshots/noobcash_logo.png"  width="40%" height="50%">
+</p>
+
+
