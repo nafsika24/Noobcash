@@ -22,6 +22,7 @@ Simple Blockchain System for NTUA ECE Course Distributed Systems
 <p align="center">
   <img src= "https://github.com/nafsika24/Noobcash/blob/main/screenshots/gif_cli.gif"  width="80%" height="70%">
 </p>
+
 ## Description 
 The user can interact with the system by using a simple CLI or the Webapp Interface. In Noobcash App you will register nodes and simulate a blockchain system, through processes of sending and receiving money(NBC Coins), consensus, proof of work, mining etc. At the start of the system the first node to register should be the bootstrap node who will create the genesis block. After all the "children" nodes have registered the bootstrap node will give each one of them 100 NBC. Now the transactions can begin.
 
