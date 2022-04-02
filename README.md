@@ -1,4 +1,4 @@
-# Noobcash
+# Noobcash ₿ 🔗
 ## About the Project
 Simple Blockchain System for NTUA ECE Course Distributed Systems
 
